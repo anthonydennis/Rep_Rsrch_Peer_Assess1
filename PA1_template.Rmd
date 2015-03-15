@@ -32,7 +32,9 @@ data_by_date <- group_by(data, date)
 
 steps_by_date <- summarise(data_by_date, steps=sum(steps))
 
-hist(steps_by_date$steps)
+hist(steps_by_date$steps,
+     main="Steps per day",
+     xlab="Number of steps in a day")
 
 final_steps_by_date <- summarise(steps_by_date,
                                  avg_steps=mean(steps,na.rm=TRUE),
